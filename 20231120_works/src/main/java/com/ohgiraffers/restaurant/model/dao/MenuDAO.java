@@ -60,4 +60,13 @@ public class MenuDAO { // 메뉴 DAO 클래스 선언
         // 최종적으로 등록된 메뉴의 개수를 반환
         return result;
     }
+
+    public int DeleteMenu(Connection con, MenuDTO menuDTO) { // 메뉴를 등록하는 메소드
+        PreparedStatement stmt = null; // SQL 문장을 실행하기 위한 객체
+        int result = 0; // 결과를 담을 변수
+        // SQL 문장 실행 및 결과 처리 코드
+        // 최종적으로 등록된 메뉴의 개수를 반환
+        return result;
+    }
 }
+

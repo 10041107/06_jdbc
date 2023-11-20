@@ -55,4 +55,20 @@ public class MenuService { // 메뉴 서비스 클래스 선언
         return result; // 등록된 메뉴의 개수 반환
     }
 
+    public int DeleteMenu(MenuDTO menuDTO) { // 메뉴를 등록하는 메소드
+        Connection con = getConnection(); // DB 연결
+        List<String> category = menuDAO.findAllCategoryCode(con); // 모든 카테고리 코드 조회
+
+        // 카테고리 검증
+        if (!category.contains(menuDTO.getCategory())) {
+            return 0;
+        }
+
+        int result = menuDAO.registMenu(con, menuDTO); // 메뉴 등록
+
+        close(con); // DB 연결 해제
+
+        return result; // 등록된 메뉴의 개수 반환
+    }
+
 }

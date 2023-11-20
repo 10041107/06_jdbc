@@ -28,7 +28,7 @@ public class MenuView { // 메뉴 뷰 클래스 선언
 
         프로그램: while (true){ // 무한 루프로 메뉴를 계속 출력
             System.out.println("== 햄스터 ==");
-            System.out.println(" 1. 햄스터 입주 \n 2. 햄스터 조회 \n 3. 끝내기");
+            System.out.println(" 1. 햄스터 입주 \n 2. 햄스터 조회 \n  3. 햄스터 삭제  \n 4. 끝내기");
             System.out.print("원하는 기능을 입력해주세요 :");
 
             //1. 사용자가 원하는 기능을 선택함
@@ -43,6 +43,8 @@ public class MenuView { // 메뉴 뷰 클래스 선언
 
                 //2-1 : 메뉴 조회
                 case 2 : viewMenu(menuCnt.findAllMenu()); break;
+
+                case 3 : viewMenu(menuCnt.findAllMenu()); break;
 
                 //default : 프로그램 종료
                 default: break 프로그램;
@@ -81,6 +83,20 @@ public class MenuView { // 메뉴 뷰 클래스 선언
         newMenu.setStatus(sc.nextLine());
 
         System.out.print("햄스터 정보 등록 중... " );
+        // 일반적으로 front에서 js를 이용하여 1차 유효성 검사를 진행한다.
+        return newMenu; // 새 메뉴 반환
+
+    }
+
+    public static MenuDTO DeleteMenu(){ // 메뉴를 등록하는 메소드
+        MenuDTO newMenu = new MenuDTO(); // 새 메뉴 객체 생성
+        Scanner sc = new Scanner(System.in);
+        System.out.println("======================================");
+        System.out.println();
+        System.out.print("삭제할 햄스터의 이름을 입력해주세요 : " );
+        newMenu.setStatus(sc.nextLine());
+
+        System.out.print("햄스터 정보 삭제 중... " );
         // 일반적으로 front에서 js를 이용하여 1차 유효성 검사를 진행한다.
         return newMenu; // 새 메뉴 반환
 

@@ -30,6 +30,6 @@
 
     <entry key="DeleteMenu">
         DELETE
-        FROM TBL_MENU WHERE HAMSTER_CODE = ?
+        FROM TBL_MENU WHERE HAMSTER_NAME = ?
     </entry>
 </properties>

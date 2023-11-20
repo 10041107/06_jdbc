@@ -56,8 +56,13 @@ public class MenuCtr { // 메뉴 컨트롤러 클래스 선언
         }
     }
 
-    public int deleteMenu(int code){ // 메뉴 삭제 메소드
-        System.out.println("code : " + code); // 삭제할 메뉴의 코드 출력
-        return 0;
+    public String DeleteMenu(MenuDTO menuDTO){ // 메뉴 삭제 메소드
+        int result = menuService.registMenu(menuDTO); // 메뉴 등록 결과
+
+        if(result <= 0){ // 등록 실패
+            return "등록중 오류가 발생됨"; // 오류 메시지 반환
+        }else{ // 등록 성공
+            return "등록완료"; // 성공 메시지 반환
+        }
     }
 }
